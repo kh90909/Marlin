@@ -154,7 +154,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 350
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define BED_MAXTEMP 150
@@ -199,9 +199,14 @@
 //    #define  DEFAULT_Kd 440
 
 // E3D hotend from forums.reprap.org/read.php?178,300903
-    #define  DEFAULT_Kp 16.46
-	#define  DEFAULT_Ki 1.13
-	#define  DEFAULT_Kd 59.88
+//    #define  DEFAULT_Kp 16.46
+//    #define  DEFAULT_Ki 1.13
+//    #define  DEFAULT_Kd 59.88
+
+// E3D hotend from tuned with M303 S185
+    #define  DEFAULT_Kp 13.66
+    #define  DEFAULT_Ki 1.14
+    #define  DEFAULT_Kd 40.95
 #endif // PIDTEMP
 
 // Bed Temperature Control
@@ -442,7 +447,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,600}  // Set for Prusa i3x
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,670}  // Set for Prusa i3x
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000,1000,100,3333}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
